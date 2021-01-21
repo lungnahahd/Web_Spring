@@ -6,7 +6,7 @@ import java.util.*;
 
 //인터페이스에 제공되는 구현체
 public class MemoryMember implements RepositoryInterface {
-    private static Map<int, Member> infostore = new HashMap<>();
+    private static Map<Integer, Member> infostore = new HashMap<>();
     private static int sequence = 0;
 
 
@@ -45,6 +45,6 @@ public class MemoryMember implements RepositoryInterface {
     //ArrayList = List 인터페이스를 상속 받은 클래스로 크기가 가변적으로 변하는 선형 리스트
     public List<Member> findall() {
         //리스트 생성시 바로 값 추가 가능
-        return new ArrayList<>(infostore.values())
+        return new ArrayList<>(infostore.values());
     }
 }
