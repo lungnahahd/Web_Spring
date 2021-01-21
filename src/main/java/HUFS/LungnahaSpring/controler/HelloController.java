@@ -3,6 +3,10 @@ package HUFS.LungnahaSpring.controler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.awt.image.SampleModel;
 
 // 스프링은 컨트롤러 인폴트 시키기
 @Controller
@@ -15,4 +19,32 @@ public class HelloController {
         //스프링에서 생성한 model에 data부분에 해당 값을 넘겨주고 hello.html 파일로 이동하라는 의미로 return 사용
         return "hello";
     }
+
+    @GetMapping("search")
+    public String SearchMVC(@RequestParam("search") String search, Model model){
+        model.addAttribute("search", search);
+        return "mvcresult";
+    }
+
+    @GetMapping("getapi")
+    @ResponseBody
+    public Small GetApi(@RequestParam("api") String api){
+        Small small = new Small();
+        small.setApidata(api);
+        return small;
+    }
+
+    static class Small{
+        private String apidata;
+
+        public String getApidata() {
+            return apidata;
+        }
+
+
+        public void setApidata(String apidata) {
+            this.apidata = apidata;
+        }
+    }
 }
+
