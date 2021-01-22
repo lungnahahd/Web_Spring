@@ -1,12 +1,10 @@
-package HUFS.LungnahaSpring.controler;
+package HUFS.LungnahaSpring.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.awt.image.SampleModel;
 
 // 스프링은 컨트롤러 인폴트 시키기
 @Controller
