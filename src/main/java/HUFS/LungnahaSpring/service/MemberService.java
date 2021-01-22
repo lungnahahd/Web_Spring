@@ -3,16 +3,24 @@ package HUFS.LungnahaSpring.service;
 import HUFS.LungnahaSpring.clientinfo.Member;
 import HUFS.LungnahaSpring.repository.MemoryMember;
 import HUFS.LungnahaSpring.repository.RepositoryInterface;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
-    private static final RepositoryInterface memberRepository = new MemoryMember();
+    private static MemoryMember memberRepository ;
     private Object IllegalStateException;
+
+    @Autowired
+    public MemberService(MemoryMember memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     //회원가입 메소드 구현
     public static int join(Member member){

@@ -1,10 +1,12 @@
 package HUFS.LungnahaSpring.repository;
 
 import HUFS.LungnahaSpring.clientinfo.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
 //인터페이스에 제공되는 구현체
+@Repository
 public class MemoryMember implements RepositoryInterface {
     private static Map<Integer, Member> infostore = new HashMap<>();
     private static int sequence = 0;
