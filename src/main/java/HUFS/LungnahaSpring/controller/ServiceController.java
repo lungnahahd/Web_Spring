@@ -35,6 +35,7 @@ public class ServiceController {
     @GetMapping(value = "/members")
     public String list(Model model){
         List<Member> members = memberService.findAllMember();
+        //받은 list를 하나씩 꺼내서 모델 members에 하나씩 담는 코드
         model.addAttribute("members",members);
         return "memberList";
     }

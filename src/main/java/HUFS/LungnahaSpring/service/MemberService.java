@@ -11,14 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+//@Service
 public class MemberService {
 
-    private static MemoryMember memberRepository ;
+    private static RepositoryInterface memberRepository ;
     private Object IllegalStateException;
 
-    @Autowired
-    public MemberService(MemoryMember memberRepository) {
+    //@Autowired
+    public MemberService(RepositoryInterface memberRepository) {
         this.memberRepository = memberRepository;
     }
 
