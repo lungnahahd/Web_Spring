@@ -32,7 +32,8 @@ public class JpaMemberRepository implements RepositoryInterface {
 
     @Override
     public Optional<Member> findbyname(String name) {
-        List<Member> result = em.createQuery("select m from Member where m.name = :name",Member.class).setParameter("name",name).getResultList();
+        // :이름1 으로 파라미터 바인딩 실시 뒤에 이름1변수에 name을 집어넣는 것
+        List<Member> result = em.createQuery("select m from Member m where m.name = :name",Member.class).setParameter("name",name).getResultList();
         return result.stream().findAny();
     }
 
